@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Using Plastics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa;
+            color: #004d40;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #004d40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .plastic-bottle {
+            width: 500px; /* Increased size to be 5 times bigger */
+            animation: spin 2s linear forwards;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            transform: translateY(20px);
+            animation: slideIn 0.5s ease-in-out forwards;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #004d40;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .section {
+            margin: 50px 0; /* Space between sections */
+        }
+    </style>
+</head>
+<body>
+
+<div class="loading">
+    <img src="bo.png" alt="Plastic Bottle" class="plastic-bottle">
+</div>
+
+<header>
+    <h1>Stop Using Plastics!</h1>
+</header>
+
+<div class="content">
+    <div class="section">
+        <h2>Why It Matters</h2>
+        <p>Plastic pollution is a major environmental issue. It affects our oceans, wildlife, and human health. Over 800 species worldwide are affected by marine debris, and plastic makes up 80% of all marine debris.</p>
+    </div>
+
+    <div class="section">
+        <h2>What You Can Do</h2>
+        <ul>
+            <li>Use reusable bags instead of plastic bags.</li>
+            <li>Opt for glass or metal containers instead of plastic.</li>
+            <li>Recycle whenever possible and support recycling initiatives.</li>
+            <li>Participate in community clean-ups to help remove plastic waste from the environment.</li>
+            <li>Educate others about the impact of plastic pollution.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Fun Fact</h2>
+        <p>Did you know? A single plastic bottle can take up to 450 years to decompose!</p>
+    </div>
+
+    <div class="section">
+        <h2>Impact of Plastic Pollution</h2>
+        <p>Plastic waste can choke marine life and contribute to the death of numerous species. Microplastics are also being found in our food chain, affecting human health.</p>
+    </div>
+
+    <div class="section">
+        <h2>Join the Movement</h2>
+        <p>There are numerous organizations dedicated to fighting plastic pollution. Join local groups, donate to environmental charities, or simply start by reducing your own plastic use.</p>
+    </div>
+
+    <div class="section">
+        <h2>Share Your Story</h2>
+        <p>We encourage you to share your journey towards a plastic-free life! Use social media to spread awareness and inspire others.</p>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Awareness Campaign</p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const loadingScreen = document.querySelector('.loading');
+        const content = document.querySelector('.content');
+
+        // Simulate loading time of 2 seconds for the spinning animation
+        setTimeout(() => {
+            loadingScreen.style.display = 'none'; // Hide loading screen
+            content.style.opacity = 1; // Show content
+        }, 2000); // 2 seconds
+    });
+</script>
+</body>
+</html>
